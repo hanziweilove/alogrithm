@@ -1,8 +1,8 @@
-/**
+package linkiedlist.LRU_doubly_linkedlist; /**
  * Created by ziweihan on 7/12/19.
  *
- * 146. LRU Cache
- * Design and implement a data structure for Least Recently Used (LRUCache_generics) cache. It should support the following operations: get and put.
+ * 146. LRU_doubly_linkedlist linkiedlist.Cache
+ * Design and implement a data structure for Least Recently Used (linkiedlist.LRU_doubly_linkedlist.LRUCache_generics) cache. It should support the following operations: get and put.
 
  get(key) - Get the value (will always be positive) of the key if the key exists in the cache, otherwise return -1.
  put(key, value) - Set or insert the value if the key is not already present. When the cache reached its capacity, it should invalidate the least recently used item before inserting a new item.
@@ -41,8 +41,8 @@ import java.util.Map;
  * Doubly linked list to reorder the elements.*
  *
  *
- * 146. LRU Cache
- * Design and implement a data structure for Least Recently Used (LRU) cache.
+ * 146. LRU_doubly_linkedlist linkiedlist.Cache
+ * Design and implement a data structure for Least Recently Used (LRU_doubly_linkedlist) cache.
  * It should support the following operations: get and put.
 
  get(key) - Get the value (will always be positive) of the key if the key exists in the cache, otherwise return -1.
