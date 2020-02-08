@@ -51,6 +51,8 @@ public class SumRootToLeaf_M {
         return sum;
     }
 
+    //DFS method: find the sum of each path from root to leaf, save the path sum in a int list
+    // then in the main method, add up all the path sums.
     private void sumNumbers(TreeNode root, List<Integer> res, int pathSum){
         if(root == null)
             return;
@@ -65,8 +67,12 @@ public class SumRootToLeaf_M {
 
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(3);
+        TreeNode left = new TreeNode(2);
+        TreeNode right = new TreeNode(3);
+        root.left = left;
+        root.right = right;
+        left.left = new TreeNode(4);
+        left.right = new TreeNode(5);
         SumRootToLeaf_M solution = new SumRootToLeaf_M();
         System.out.print(solution.sumNumbers(root));
     }

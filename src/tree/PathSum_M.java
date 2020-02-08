@@ -36,9 +36,11 @@ public class PathSum_M {
          pathSum(root, sum, res, new ArrayList<>());
 
          return res;
-
     }
 
+    /**
+     * DFS method recursively to get sum of each path, then add each sum to the list
+     */
     private void pathSum(TreeNode root, int sum, List<List<Integer>> res, List<Integer> pathList) {
         if(root == null)
             return ;
@@ -50,6 +52,7 @@ public class PathSum_M {
             return ;
         }
 
+        //allocate new memory location, otherwise old reference will keep appending new values during traversal.
         pathSum(root.left, sum, res, new ArrayList<>(pathList));
         pathSum(root.right, sum, res, new ArrayList<>(pathList));
     }

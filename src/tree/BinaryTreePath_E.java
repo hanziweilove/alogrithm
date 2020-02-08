@@ -44,8 +44,8 @@ public class BinaryTreePath_E {
         }else{
             pathStr = pathStr+"->";
         }
-        binaryTreePath(root.left, res, new String(pathStr));
-        binaryTreePath(root.right, res, new String(pathStr));
+        binaryTreePath(root.left, res, pathStr);
+        binaryTreePath(root.right, res, pathStr);
     }
     public static void main(String[] args) {
 
