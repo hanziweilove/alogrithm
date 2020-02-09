@@ -28,6 +28,17 @@ import java.util.List;
  */
 public class BinaryTreePath_E {
 
+
+    /**
+     * Similar
+     * {@link PathSum_E}
+     * {@link PathSum_M}
+     * {@link BinaryTreePath_E}
+     * {@link SumRootToLeaf_M}
+     * {@link recursion.Subset_Or_Combination_M}
+     * @param root
+     * @return
+     */
     public List<String> binaryTreePaths(TreeNode root) {
          List<String> res = new ArrayList<>();
         binaryTreePath(root, res, new String());

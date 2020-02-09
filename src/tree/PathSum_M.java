@@ -31,6 +31,17 @@ import java.util.List;
  */
 public class PathSum_M {
 
+    /**
+     * Similar
+     * {@link PathSum_E}
+     * {@link PathSum_M}
+     * {@link BinaryTreePath_E}
+     * {@link SumRootToLeaf_M}
+     * {@link recursion.Subset_Or_Combination_M}
+     * @param root
+     * @param sum
+     * @return
+     */
     public List<List<Integer>> pathSum(TreeNode root, int sum) {
          List<List<Integer>> res = new ArrayList<>();
          pathSum(root, sum, res, new ArrayList<>());
@@ -51,8 +62,9 @@ public class PathSum_M {
             res.add(pathList);
             return ;
         }
-
-        //allocate new memory location, otherwise old reference will keep appending new values during traversal.
+        // since stack keeps the reference of pathList variable
+        // we need to allocate new memory location, otherwise old reference will keep
+        // appending new values during traversal.
         pathSum(root.left, sum, res, new ArrayList<>(pathList));
         pathSum(root.right, sum, res, new ArrayList<>(pathList));
     }

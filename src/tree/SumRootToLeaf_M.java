@@ -40,6 +40,16 @@ import java.util.List;
  */
 public class SumRootToLeaf_M {
 
+    /**
+     * Similar problem:
+     * {@link PathSum_E}
+     * {@link PathSum_M}
+     * {@link BinaryTreePath_E}
+     * {@link SumRootToLeaf_M}
+     * {@link recursion.Subset_Or_Combination_M}
+     * @param root
+     * @return
+     */
     public int sumNumbers(TreeNode root) {
         List<Integer> res = new ArrayList<>();
         int pathSum = 0;
@@ -51,8 +61,10 @@ public class SumRootToLeaf_M {
         return sum;
     }
 
-    //DFS method: find the sum of each path from root to leaf, save the path sum in a int list
-    // then in the main method, add up all the path sums.
+    /**
+     *  DFS method: find the sum of each path from root to leaf, save the path sum in a int list
+     *  then in the main method, add up all the path sums.
+     */
     private void sumNumbers(TreeNode root, List<Integer> res, int pathSum){
         if(root == null)
             return;

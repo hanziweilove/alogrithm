@@ -46,7 +46,7 @@ public class BinaryTreeRightSideView_M {
                 if(cur.right != null) {
                     queue.offer(cur.right);
                 }
-                // if it's the end of next level,
+                // if it's the end of current level,
                 // add the current level to result.
                 if(queue.peek() == null){
                     queue.offer(null);

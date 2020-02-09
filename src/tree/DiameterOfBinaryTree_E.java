@@ -22,26 +22,20 @@ package tree;
  */
 public class DiameterOfBinaryTree_E {
 
-//    public int diameterOfBinaryTree(TreeNode root) {
-//        if(root == null)
-//            return 0;
-//
-//        int maxLeft = 0;
-//        int maxRight = 0;
-//        if(root.left != null){
-//            maxLeft = getHeight(root.left);
-//        }
-//        if(root.right != null){
-//           maxRight = getHeight(root.right);
-//        }
-//        int maxDiameter = maxLeft + maxRight;
-//        return Math.max(maxDiameter,Math.max(diameterOfBinaryTree(root.left), diameterOfBinaryTree(root.right)));
-//    }
-
-    public int getHeight(TreeNode node){
-        if(node == null)
+    public int diameterOfBinaryTree_recursive(TreeNode root) {
+        if(root == null)
             return 0;
-        return Math.max(getHeight(node.left), getHeight(node.right))+1;
+
+        int maxLeft = 0;
+        int maxRight = 0;
+        if(root.left != null){
+            maxLeft = getHeight(root.left);
+        }
+        if(root.right != null){
+           maxRight = getHeight(root.right);
+        }
+        int maxDiameter = maxLeft + maxRight;
+        return Math.max(maxDiameter,Math.max(diameterOfBinaryTree(root.left), diameterOfBinaryTree(root.right)));
     }
 
     public int diameterOfBinaryTree(TreeNode root) {
@@ -59,6 +53,13 @@ public class DiameterOfBinaryTree_E {
         diameter =  Math.max(diameter, heightSum);
         return Math.max(diameter, Math.max(helper(root.left, diameter), helper(root.right, diameter)));
     }
+
+    public int getHeight(TreeNode node){
+        if(node == null)
+            return 0;
+        return Math.max(getHeight(node.left), getHeight(node.right))+1;
+    }
+
 
     public static void main(String[] args){
         DiameterOfBinaryTree_E problem = new DiameterOfBinaryTree_E();

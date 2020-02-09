@@ -23,6 +23,17 @@ package tree;
  */
 public class PathSum_E {
 
+    /**
+     * Similar problems
+     * {@link PathSum_E}
+     * {@link PathSum_M}
+     * {@link BinaryTreePath_E}
+     * {@link SumRootToLeaf_M}
+     * {@link recursion.Subset_Or_Combination_M}
+     * @param root
+     * @param sum
+     * @return
+     */
     public boolean hasPathSum(TreeNode root, int sum) {
         if(root == null)
             return false;
