@@ -1,4 +1,4 @@
-package array;
+package linkiedlist;
 
 /**
  * Created by ziweihan on 2/19/20.
@@ -20,14 +20,6 @@ package array;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-/**
- * Definition for singly-linked list.
- *  */
-class ListNode {
-    int val;
-    ListNode next;
-    ListNode(int x) { val = x; }
-}
 public class MergeKSortedLists_H {
 
     /**
@@ -45,7 +37,7 @@ public class MergeKSortedLists_H {
     public ListNode mergeKLists(ListNode[] lists) {
         ListNode newHead = new ListNode(0);
         ListNode cur = newHead;
-        //define a comparator to avoid ClassCastException: array.ListNode cannot be cast to java.lang.Comparable
+        //define a comparator to avoid ClassCastException: linkiedlist.ListNode cannot be cast to java.lang.Comparable
         Comparator<ListNode> comparator = (ListNode o1, ListNode o2)-> o1.val -o2.val;
         PriorityQueue<ListNode> queue = new PriorityQueue<>(comparator);
         for(ListNode node: lists){
