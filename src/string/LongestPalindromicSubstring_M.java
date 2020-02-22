@@ -4,7 +4,8 @@ package string;
  * Created by ziweihan on 2/19/20.
  *
  * 5. Longest Palindromic Substring
- * Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s
+ * Given a string s, find the longest palindromic substring in s.
+ * You may assume that the maximum length of s
  * is 1000.
 
  Example 1:
@@ -35,7 +36,7 @@ public class LongestPalindromicSubstring_M {
         if(s.length() == 1)
             return s;
         String longest = ""; //default longest string
-        int i = 1;
+        int i = 0;
         while(i<s.length()){
             // get longest palindrome with center of i
             String temp = findLongestPalindromeFromCenter(s, i, i);
@@ -62,7 +63,7 @@ public class LongestPalindromicSubstring_M {
 
     public static void main(String[] args) {
         LongestPalindromicSubstring_M solution = new LongestPalindromicSubstring_M();
-        String input = "cbabcdefedc";
+        String input = "abccccdd";
         System.out.print(solution.longestPalindrome(input));
 
     }
