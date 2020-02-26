@@ -64,11 +64,9 @@ public class BTZigzagLevelOrderTraversal_M {
                     queue.offer(null);
                     resultList.add(levelList);
                     levelCount++;
+                    levelList = new ArrayList<>();
                 }
-            }else{
-                levelList = new ArrayList<>();
             }
-
         }
         return resultList;
     }

@@ -22,7 +22,7 @@ import java.util.*;
  Since the graph is undirected, if node p has node q as neighbor, then node q must have node p as neighbor too.
  You must return the copy of the given node as a reference to the cloned graph.
  */
-public class CloneGraph {
+public class CloneGraph_M {
     /**
      * BFS way to clone
      * @param node
@@ -68,7 +68,7 @@ public class CloneGraph {
 
     public static void main(String[] args){
 
-        CloneGraph graph = new CloneGraph();
+        CloneGraph_M graph = new CloneGraph_M();
 
         Node node1 = new Node();
         Node node2 = new Node();

@@ -55,11 +55,9 @@ public class LevelOrderTraversalII_E {
                 if(queue.peek() == null){
                     queue.offer(null);
                     resultList.add(levelList);
+                    // end of current level, create a new list
+                    levelList = new ArrayList<>();
                 }
-            }else{
-                // null item
-                // end of current level, create a new list
-                levelList = new ArrayList<>();
             }
         }
 
