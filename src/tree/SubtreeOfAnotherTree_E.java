@@ -44,6 +44,13 @@ import java.util.List;
 public class SubtreeOfAnotherTree_E {
     List<TreeNode> commonNodeList = new ArrayList<>();
 
+    /**
+     * Find all common nodes first, then find out if there is the same tree structure in the list with the given tree t.
+     * Note: The tree is a Binary tree, so there might be duplicate nodes
+     * @param s
+     * @param t
+     * @return
+     */
     public boolean isSubtree(TreeNode s, TreeNode t) {
         // corner cases
         if (s == null && t == null) {

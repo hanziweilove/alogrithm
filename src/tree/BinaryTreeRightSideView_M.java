@@ -28,7 +28,7 @@ import java.util.Queue;
 public class BinaryTreeRightSideView_M {
 
     /**
-     * Use BFS with a Queue to remember the last node of each level.
+     * 1. BFS with a Queue to remember the last node of each level.
      * use "null node" to separate each level.
      * The node next to the 'null node' is the right side view.
      */
@@ -56,6 +56,31 @@ public class BinaryTreeRightSideView_M {
         }
         return res;
     }
+
+    /**
+     * 2. DFS to do traversal root->right child->left child.
+     * Add first element visited in the new level to the result.
+     * @param root
+     * @return
+     */
+    public List<Integer> rightSideView_DFS(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        if(root == null)
+            return res;
+
+        dfs(root, res, 0);
+        return res;
+    }
+
+    private void dfs(TreeNode root, List<Integer> res, int  level){
+        if(root == null)
+            return;
+        if(level == res.size())
+            res.add(root.val);
+        dfs(root.right, res, level+1);
+        dfs(root.left, res, level+1);
+    }
+
 
     public static void main(String[] args) {
         TreeNode root = BST.createBST();

@@ -22,7 +22,7 @@ package tree;
  */
 public class DiameterOfBinaryTree_E {
 
-    public int diameterOfBinaryTree_recursive(TreeNode root) {
+    public int diameterOfBinaryTree(TreeNode root) {
         if(root == null)
             return 0;
 
@@ -38,21 +38,21 @@ public class DiameterOfBinaryTree_E {
         return Math.max(maxDiameter,Math.max(diameterOfBinaryTree(root.left), diameterOfBinaryTree(root.right)));
     }
 
-    public int diameterOfBinaryTree(TreeNode root) {
-        return helper(root, 0);
-    }
-
-    private int helper(TreeNode root, int diameter){
-        if(root == null){
-            return 0;
-        }
-
-        int l_height = getHeight(root.left);
-        int r_height = getHeight(root.right);
-        int heightSum = l_height+r_height;
-        diameter =  Math.max(diameter, heightSum);
-        return Math.max(diameter, Math.max(helper(root.left, diameter), helper(root.right, diameter)));
-    }
+//    public int diameterOfBinaryTree(TreeNode root) {
+//        return helper(root, 0);
+//    }
+//
+//    private int helper(TreeNode root, int diameter){
+//        if(root == null){
+//            return 0;
+//        }
+//
+//        int l_height = getHeight(root.left);
+//        int r_height = getHeight(root.right);
+//        int heightSum = l_height+r_height;
+//        diameter =  Math.max(diameter, heightSum);
+//        return Math.max(diameter, Math.max(helper(root.left, diameter), helper(root.right, diameter)));
+//    }
 
     public int getHeight(TreeNode node){
         if(node == null)

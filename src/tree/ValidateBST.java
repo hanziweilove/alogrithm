@@ -6,26 +6,21 @@ import java.util.Stack;
  * Created by ziweihan on 10/7/18.
  *
  * 98. Validate Binary Search Tree
- *
  Given a binary tree, determine if it is a valid binary search tree (BST).
-
  Assume a BST is defined as follows:
-
  The left subtree of a node contains only nodes with keys less than the node's key.
  The right subtree of a node contains only nodes with keys greater than the node's key.
  Both the left and right subtrees must also be binary search trees.
-
 
  Example 1:
 
     2
    / \
  1   3
-
  Input: [2,1,3]
  Output: true
- Example 2:
 
+ Example 2:
      5
     / \
    1   4
@@ -46,7 +41,6 @@ public class ValidateBST {
     Not accepted solution, but it's right
     */
     private static Integer min = null;
-
     public boolean isValidBST_Inorder(TreeNode root) {
         if(root == null)
             return true;
@@ -68,10 +62,9 @@ public class ValidateBST {
 
         return true;
     }
-
-
     /**
-     * 2. Recursion: check current node and left right children
+     * 2. Recursion: check current node-> left child -> right child
+     * both children have to be valid BST
      * @param root
      * @return
      */
@@ -91,21 +84,13 @@ public class ValidateBST {
             return false;
         }
 
-        //validate left child
-        if(!helper(root.left, min, root.val)){
-            return false;
-        }
-
-        //validate right child
-        if(!helper(root.right, root.val, max)){
-            return false;
-        }
-
-        return true;
+        //both children should be valid
+        return helper(root.left, min, root.val) &&
+                helper(root.right, root.val, max);
     }
 
     /**
-     * 3. Using stack: Inorder traversal
+     * 3. Using stack: Inorder traversal, left child value is < root, keep updating min value
      * @param root
      * @return
      */
@@ -135,7 +120,7 @@ public class ValidateBST {
     public static void main(String[] args){
         ValidateBST problem = new ValidateBST();
         TreeNode root = BST.createBST();
-        System.out.print(problem.isValidBST_stack(root));
+        System.out.print(problem.isValidBST(root));
     }
 
 }

@@ -22,6 +22,7 @@ public class ShortestWordDistance_E {
             if(words[i].equals(word1)){
                 index1 = i;
                 if(index2 != -1) {
+                    //if the first occurrence of word1 is there
                     minDistance = Math.min(minDistance, Math.abs(index1-index2));
                 }
             }
@@ -29,6 +30,7 @@ public class ShortestWordDistance_E {
             if(words[i].equals(word2)){
                 index2 = i;
                 if(index1 != -1) {
+                    //if the first occurrence of word2 is there
                     minDistance = Math.min(minDistance, Math.abs(index2-index1));
                 }
             }

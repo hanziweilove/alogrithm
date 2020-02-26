@@ -53,6 +53,8 @@ public class BinaryTreePath_E {
             res.add(pathStr);
             return;
         }else{
+            //to handle leaf node, we don't need to add '->'
+            // only non-leaf node need '->'
             pathStr = pathStr+"->";
         }
         binaryTreePath(root.left, res, pathStr);

@@ -24,6 +24,11 @@ package tree;
  */
 public class CountCompleteTreeNodes_M {
 
+    /**
+     * This problem is actually counting the number of nodes in the tree
+     * @param root
+     * @return
+     */
     public int countNodes(TreeNode root) {
         if(root == null)
             return 0;

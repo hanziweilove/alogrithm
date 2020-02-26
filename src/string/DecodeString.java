@@ -40,7 +40,7 @@ public class DecodeString {
         for(int i = 0; i< s.length() ; i++) {
             char c = s.charAt(i);
             if(Character.isDigit(c)){
-               count = 10*count + c -'0';
+               count = 10*count + c -'0'; //100 case: char '1', char '0', char'0', needs to times 10 for each char.
             } else if(Character.isLetter(c)){
                 result = result.append(c);
             } else if(c == '['){
@@ -62,41 +62,6 @@ public class DecodeString {
         return result.toString();
 
     }
-
-    private String multiplyString(String str, int num) {
-        String result = "";
-        for (int i = 0; i < num; i++) {
-            result += str;
-        }
-        return result;
-    }
-
-//
-//    private String decodeString_recursively(String s, int i) {
-//       String result = "";
-//       int count = 0;
-//       if(s.charAt(i) == ']')
-//           return result;
-//
-//       while(i<s.length()){
-//           char c =  s.charAt(i);
-//           if(Character.isDigit(c)){
-//               //is digit accumulate the num
-//               count = 10*count + c-'0';
-//           }else if(c == '['){
-//               i++;
-//               String str = decodeString(s, i);
-//               result = result + multiplyString(str, count);
-//
-//           } else if(Character.isLetter(c)){
-//               // is letter
-//               result = result + String.valueOf(c);
-//           }
-//           i++;
-//       }
-//       return result;
-//    }
-
 
     /**************************************************
      * Recursive way
@@ -133,9 +98,9 @@ public class DecodeString {
     public static void main(String[] args) {
         //String input = "2[a]";
         //String input = "2[a]2[b]"; //pass
-        //String input = "3[ab2[c]]"; //pass
-        String input =  "2[abc]3[cd]ef";
-        //String input = "100[Leetcode]";
+        String input = "3[ab2[c]]"; //pass
+        //String input =  "2[abc]3[cd]ef"; //pass
+        //String input = "100[Leetcode]"; //pass
         DecodeString decodeString = new DecodeString();
         System.out.print(decodeString.decodeString(input));
 

@@ -29,7 +29,7 @@ package tree;
  */
 public class FlattenBinaryTreeToLinkedList_M {
 
-    // use inroder traversal
+    // use inorder traversal
     public void flatten(TreeNode root) {
         if(root == null)
             return;
@@ -40,10 +40,11 @@ public class FlattenBinaryTreeToLinkedList_M {
     }
 
     private void processNode(TreeNode node){
-        //if both children
+        //case one: if root has both children
         if(node.left != null && node.right != null){
             TreeNode cur = node.left;
             TreeNode right = node.right;
+            //find the tail of left child and then connect it to the original right child
             while(cur.right!= null){
                 cur = cur.right;
             }
@@ -54,12 +55,12 @@ public class FlattenBinaryTreeToLinkedList_M {
             //set current left child to null
             node.left = null;
         }
-        //if only has left child
+        //case 2: if only has left child
         else if(node.left != null){
             node.right = node.left;
             node.left = null;
         }
-        //if only has right child, no need to handle
+        //case 3: if only has right child, no need to handle
     }
 
     public static void main(String[] args){

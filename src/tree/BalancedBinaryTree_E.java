@@ -42,6 +42,7 @@ public class BalancedBinaryTree_E {
             return true;
         }
 
+        //get max depth of each child
         int heightL = getHeight(root.left);
         int heightR = getHeight(root.right);
 

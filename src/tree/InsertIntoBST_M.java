@@ -40,6 +40,13 @@ package tree;
  */
 public class InsertIntoBST_M {
 
+    /**
+     * Use BST attribute, left.val<root.val<right.val.
+     * Find the correct position where we can insert, then use parent node to decide if we should insert into left or right.
+     * @param root
+     * @param val
+     * @return
+     */
     public TreeNode insertIntoBST(TreeNode root, int val) {
         TreeNode node = root;
         TreeNode parent = root;

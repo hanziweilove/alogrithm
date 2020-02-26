@@ -29,7 +29,7 @@ public class GroupAnagrams_M {
      * Space: O(n)
      *
      * Use a hash map
-     * key = char array of each string with each char occurrence form
+     * key = char array of each string
      * value = ArrayList of the anagram set
      *
      * The trick is to use the char array to record the count of each character in the string,
@@ -50,6 +50,7 @@ public class GroupAnagrams_M {
             for(int j = 0; j< str.length(); j++){
                 chars[str.charAt(j)-'a']++;
             }
+            //create new string key based on the char array
             String strKey = new String(chars);
 
             //check if map contains the key

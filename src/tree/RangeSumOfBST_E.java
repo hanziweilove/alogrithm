@@ -5,7 +5,8 @@ package tree;
  *
  * 938. Range Sum of BST
  *
- * Given the root node of a binary search tree, return the sum of values of all nodes with value between L and R (inclusive).
+ * Given the root node of a binary search tree, return the sum of values of all nodes with value between L and R
+ * (inclusive).
  The binary search tree is guaranteed to have unique values.
 
  Example 1:
@@ -23,6 +24,13 @@ package tree;
 
 public class RangeSumOfBST_E {
 
+    /**
+     * 1. DFS to add children nodes FIRST, that is between L and R.     *
+     * @param root
+     * @param L
+     * @param R
+     * @return
+     */
     public int rangeSumBST(TreeNode root, int L, int R) {
         if(root == null)
             return 0;
@@ -36,9 +44,23 @@ public class RangeSumOfBST_E {
             return root.val + childSum;
         }
 
-        return 0+ childSum;
+        return childSum;
     }
 
+    /**
+     * 2. Use global var to keep track of which val to add to the sum
+     */
+    int sum = 0;
+    public int rangeSumBST_recursive(TreeNode root, int L, int R){
+        if(root == null)
+            return 0;
+        if(root.val>=L && root.val<=R){
+            sum += root.val;
+        }
+        rangeSumBST_recursive(root.left, L, R);
+        rangeSumBST_recursive(root.right, L, R);
+        return sum;
+    }
     public static void main(String[] args){
         TreeNode root = BST.createBST();
         RangeSumOfBST_E problem = new RangeSumOfBST_E();

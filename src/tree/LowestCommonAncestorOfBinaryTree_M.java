@@ -32,10 +32,9 @@ import java.util.*;
  p and q are different and both values will exist in the binary tree.
  */
 public class LowestCommonAncestorOfBinaryTree_M {
-
-    // https://medium.com/algorithm-problems/lowest-common-ancestor-of-a-binary-tree-8f69531087b1
     /**
      * 1.Recursive way
+     *  https://medium.com/algorithm-problems/lowest-common-ancestor-of-a-binary-tree-8f69531087b1
      */
     public TreeNode lowestCommonAncestor_recursion(TreeNode root, TreeNode p, TreeNode q) {
         if(root == null)

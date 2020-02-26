@@ -45,7 +45,7 @@ public class FindAllAnagrams_M {
         //s = "cbaebabacd", p = "abc"
         //check "cba", "bae", "aeb"..."acd" to see if it's a anagram of "abc"
         while((i+p.length()) <= s.length()){
-            String subString = s.substring(i,i+p.length());
+            String subString = s.substring(i,i+p.length()); //subString  endIndex, exclusive.
             if(isAnagram(subString, p)){
                 res.add(i);
             }
