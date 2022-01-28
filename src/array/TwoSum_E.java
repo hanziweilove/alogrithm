@@ -1,5 +1,6 @@
 package array;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,6 +33,13 @@ public class TwoSum_E {
             }
         }
         return result;
+    }
+
+    public static void main(String[] args) {
+        TwoSum_E twoSum = new TwoSum_E();
+        int[] result = twoSum.twoSum(new int[]{1, 2, 3}, 4);
+        System.out.print(Arrays.toString(result));
+
     }
 
 }
