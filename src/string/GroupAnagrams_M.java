@@ -51,7 +51,7 @@ public class GroupAnagrams_M {
                 chars[str.charAt(j)-'a']++;
             }
             //create new string key based on the char array
-            String strKey = new String(chars);
+            String strKey = String.valueOf(chars);
 
             //check if map contains the key
             if(hashMap.containsKey(strKey)){
